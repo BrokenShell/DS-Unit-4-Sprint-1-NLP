@@ -1,11 +1,8 @@
-import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB
 from sklearn.linear_model import LogisticRegression, SGDClassifier
-from sklearn.svm import SVC, LinearSVC, NuSVC
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.svm import SVC, LinearSVC
 import spacy
 
 nlp = spacy.load("en_core_web_lg")
@@ -14,16 +11,6 @@ nlp = spacy.load("en_core_web_lg")
 def get_word_vectors(docs):
     return [nlp(doc).vector for doc in docs]
 
-
-# train = pd.read_csv("data/train.csv", header=0)
-# test = pd.read_csv("data/test.csv", header=0)
-#
-# features = train['description']
-# labels = train['ratingCategory']
-#
-# x1, x2, y1, y2 = train_test_split(features, labels, random_state=42, train_size=0.2)
-# x1 = pd.DataFrame(get_word_vectors(x1))
-# x2 = pd.DataFrame(get_word_vectors(x2))
 
 df = pd.read_csv('data/train.csv')
 y1 = df['ratingCategory']
