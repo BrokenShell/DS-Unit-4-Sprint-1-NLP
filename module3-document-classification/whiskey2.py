@@ -18,14 +18,13 @@ x1 = pd.DataFrame(get_word_vectors(df['description']))
 test = pd.read_csv("data/test.csv")
 
 
+BNB = BernoulliNB()
 gnb = GaussianNB()
 KNN = KNeighborsClassifier(n_neighbors=1)
-MNB = MultinomialNB()
-BNB = BernoulliNB()
 LR = LogisticRegression()
-SDG = SGDClassifier()
-SVC = SVC()
 LSVC = LinearSVC()
+SVC = SVC()
+SDG = SGDClassifier()
 
 
 BNB.fit(x1, y1)

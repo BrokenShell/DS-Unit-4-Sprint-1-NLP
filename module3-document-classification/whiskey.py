@@ -70,12 +70,12 @@ classifier = KerasClassifier(
 )
 
 param_distributions = {
-    # 'batch_size': range(2, 24, 2),
-    # 'epochs': range(160, 250, 20),
-    # 'drop': [0.1, 0.15, 0.2, 0.25, 0.3],
-    # 'activation': ['tanh', 'relu', 'linear', 'softmax', 'softplus', 'softsign', 'sigmoid', 'hard_sigmoid'],
-    # 'depth': range(32, 256, 32),
-    # 'n_layers': range(1, 10),
+    'batch_size': range(2, 24, 2),
+    'epochs': range(160, 250, 20),
+    'drop': [0.1, 0.15, 0.2, 0.25, 0.3],
+    'activation': ['tanh', 'relu', 'linear', 'softmax', 'softplus', 'softsign', 'sigmoid', 'hard_sigmoid'],
+    'depth': range(32, 256, 32),
+    'n_layers': range(1, 10),
 }
 
 search = RandomizedSearchCV(
